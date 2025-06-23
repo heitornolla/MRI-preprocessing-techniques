@@ -2,6 +2,23 @@
 Code examples of the free course in Youtube of [brain MRI preprocessing techniques in python](https://www.youtube.com/playlist?list=PLI3eIHxETjX4a5NMmgayg3wuM232fYIxy)
 
 ## Setup Instructions
+
+### Know issue with SciPy
+If you encounter the following error:
+
+```python
+ImportError: cannot import name '_lazywhere' from 'scipy._lib._util'
+```
+
+This occurs because the `_lazywhere` function was removed in SciPy v1.16.0.
+
+To resolve this, ensure that SciPy is pinned to **version ≤ 1.15.0**. This has already been addressed in both `requirements.txt` and the `Dockerfile`.
+For more details, see the related discussions in the [statsmodels GitHub issues](https://github.com/statsmodels/statsmodels/issues):
+
+- [Issue #9542](https://github.com/statsmodels/statsmodels/issues/9542): ImportError with `_lazywhere` in SciPy 1.16.0
+- [Issue #9584](https://github.com/statsmodels/statsmodels/issues/9584): Compatibility problems with newer SciPy versions
+
+
 ### Using venv (for Linux only)
 ```
 python -m venv .venv
