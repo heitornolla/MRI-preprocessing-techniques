@@ -8,3 +8,4 @@ notebook
 SimpleITK==2.4.0
 antspyx==0.5.4
 antspynet
+scipy==1.15.0
